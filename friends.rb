@@ -34,4 +34,13 @@ end
 def lend(lender, lendee, amount)
   lender[:monies] -= amount
   lendee[:monies] += amount
-end 
+end
+
+def all_foods(people)
+  foods = []
+  for person in people
+    foods += person[:favourites][:things_to_eat]
+  end
+
+  return foods
+end
