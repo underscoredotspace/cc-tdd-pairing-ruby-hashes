@@ -44,3 +44,11 @@ def all_foods(people)
 
   return foods
 end
+
+def no_friends(people)
+  friendless = []
+  for person in people 
+    friendless.push(person) if person[:friends].length() == 0
+  end 
+  return friendless
+end   
