@@ -27,6 +27,11 @@ def total_money(people)
   for person in people
     total += person[:monies]
   end
-  
+
   return total
 end
+
+def lend(lender, lendee, amount)
+  lender[:monies] -= amount
+  lendee[:monies] += amount
+end 
