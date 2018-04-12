@@ -81,12 +81,12 @@ class TestFriends < MiniTest::Test
 
   # 3. For a given person, check if they like a particular food
   # (e.g. the function likes_to_eat(@person3, "stew") should return true, likes_to_eat(@person3, "spinach") should return false)
-  def test_likes_to_eat_true
+  def test_likes_to_eat__true
     result = likes_to_eat(@person3, "stew")
     assert_equal(true, result)
   end
 
-  def test_likes_to_eat_false
+  def test_likes_to_eat__false
     result = likes_to_eat(@person3, "spinach")
     assert_equal(false, result)
   end
@@ -100,6 +100,7 @@ class TestFriends < MiniTest::Test
     friends_after = @person2[:friends].length()
     difference = friends_after - friends_before
     assert_equal(1, difference)
+    assert_equal(true, @person2[:friends].include?('Darren'))
   end
 
   # 5. For a given person, remove a specific name from their list of friends
@@ -110,6 +111,7 @@ class TestFriends < MiniTest::Test
     friends_after = @person3[:friends].length()
     difference = friends_after - friends_before
     assert_equal(-1, difference)
+    assert_equal(false, @person3[:friends].include?('Rick'))
   end
 
   # 6. Find the total of everyone's money
