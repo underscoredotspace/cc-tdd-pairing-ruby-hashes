@@ -81,6 +81,15 @@ class TestFriends < MiniTest::Test
 
   # 3. For a given person, check if they like a particular food
   # (e.g. the function likes_to_eat(@person3, "stew") should return true, likes_to_eat(@person3, "spinach") should return false)
+  def test_likes_to_eat_true
+    result = likes_to_eat(@person3, "stew")
+    assert_equal(true, result)
+  end
+
+  def test_likes_to_eat_false
+    result = likes_to_eat(@person3, "spinach")
+    assert_equal(false, result)
+  end
 
   # 4. For a given person, add a new name to their list of friends
   # (e.g. the function add_friend(@person2, "Darren") should add Darren to the friends.)
